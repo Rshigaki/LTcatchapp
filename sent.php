@@ -36,19 +36,14 @@
       <div class="form-title">入力内容</div>
 
       <div class="form-item">■ 名前</div>
-      <?php echo $_POST['family-name']; ?>
-      <?php echo $_POST['first-name'];?>
- 
-      <div class="form-item">■ 年齢</div>
-      <?php echo $_POST['age']; ?>
+      <?php echo $_POST['name']; ?>
 
-      <div class="form-item">■ その他</div>
-      <!-- この下でcategoryを受け取りechoする -->
-      <?php 
-      echo $_POST['age'];
-      echo $_POST['profession'];
-      echo $_POST['Email'];
-      echo $_POST['password']; ?>
+      <div class="form-item">■ パスワード</div>
+      <?php echo $_POST['password']; ?>
+
+      <div class="form-item">最寄り駅</div>
+      <?php echo $_POST['home_station']; ?>
+
     </div>
   </div>
 </body>

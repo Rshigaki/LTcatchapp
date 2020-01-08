@@ -42,40 +42,12 @@
     <div class="contact-form">
         <div class="form-title">新規登録</div>
         <form method="post" action="user_register.php">
-
-            <div class="form-item">年齢</div>
-            <select name="age">
-                <option value="未選択">選択してください</option>
-              <?php
-                for ($i = 20; $i <= 100; $i++) {
-                  echo "<option value='{$i}'>{$i}</option>";
-                }
-              ?>
-            </select>
-
-
-            <div class="form-item">名字</div>
-            <input type="text" name="family-name">
             <div class="form-item">名前</div>
-            <input type="text" name="first-name">
-            <div class="form-item">Eメールアドレス</div>
-            <input type="text" name="Email">
+            <input type="text" name="name">
             <div class="form-item">パスワード</div>
             <input type="text" name="password">
-            <!-- この下にselectタグを書く -->
-
-            <p>
-            <p class="form-item">職業(選択してください)</p>
-            <select name="profession">
-
-                <option>学生</option>
-                <option>会社員・自営業</option>
-                <option>アルバイト</option>
-                <option>専業主婦/夫</option>
-                <option>その他</option>
-            </select>
-            </p>
-
+            <div class="form-item">最寄り駅</div>
+            <input type="text" name="home-station">
             <p>
                 <input type="submit" value="登録">
             </p>

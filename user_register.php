@@ -11,8 +11,14 @@
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
             ]
         );
+				$result = $pdo->exec('insert into users (name, password, home_station) values('.$_POST["name"].','.$_POST["password"].','.$_POST["home_station"].')');
 	} catch (PDOException $e) {
-		header('Content-Type: text/plain; charset=UTF-8', true, 500);
+		echo "登録に失敗しました。";
 		echo $e;
+		print '<a href="./index.html">'."トップページに戻る".'</a>';
+		exit;
 	}
-	echo "接続成功！";
+	$_SESSION["NAME"] = $_POST["name"];
+	$_SESSION["HOME_STATION"] = $_POST["home-station"];
+	$_SESSION["LOGGED_IN"] = true;
+	header("location: ./sent.php");
