@@ -11,7 +11,11 @@
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
             ]
         );
-				$result = $pdo->exec('insert into users (name, password, home_station) values('.$_POST["name"].','.$_POST["password"].','.$_POST["home-station"].')');
+				$stmt = $pdo->prepare('insert into users (name, password, home_station) values(?, ?, ?)');
+				$stmt->bindValue(1, $_POST["name"]);
+				$stmt->bindValue(2, $_POST["password"]);
+				$stmt->bindValue(3, $_POST["home-station"]);
+				$stmt->execute();
 	} catch (PDOException $e) {
 		echo "登録に失敗しました。";
 		echo $e;
