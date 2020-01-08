@@ -17,7 +17,7 @@
 				$stmt->bindValue(3, $_POST["home-station"]);
 				$stmt->execute();
 	} catch (PDOException $e) {
-		echo "登録に失敗しました。";
+		echo "登録に失敗しました(´・ω・｀)";
 		echo $e;
 		print '<br /> <a href="./index.html">'."トップページに戻る".'</a>';
 		exit;
