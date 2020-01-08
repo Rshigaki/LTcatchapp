@@ -21,9 +21,9 @@
         <?php
 	}
 	?>
-    <html>
-        <body>
-            表示成功！
-        </body>
-    </html>
+<html>
+    <body>
+        表示成功！
+    </body>
+</html>
 
