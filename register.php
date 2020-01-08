@@ -41,7 +41,7 @@
 <div class="main">
     <div class="contact-form">
         <div class="form-title">新規登録</div>
-        <form method="post" action="sent.php">
+        <form method="post" action="user_register.php">
 
             <div class="form-item">年齢</div>
             <select name="age">
