@@ -129,7 +129,7 @@ $(function () {
         service.nearbySearch(request, callback);
 
         function callback(results, status) {
-            if (status == google.maps.places.PlacesServiceStatus.OK) {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
                 //取得したカフェ情報をそれぞれcreateMarkerに入れて、マーカーを作成
                 for (var i = 0; i < results.length; i++) {
                     var place = results[i];
@@ -167,4 +167,4 @@ $(function () {
             }
         }
     }
-})
+});

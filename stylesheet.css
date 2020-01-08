@@ -9,6 +9,7 @@ li {
     height: 90px;
 }
 .header-logo {
+    text-decoration: none;
     float: left;
     font-size: 36px;
     padding: 20px 40px;
