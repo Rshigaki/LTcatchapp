@@ -15,6 +15,7 @@
 	} catch (PDOException $e) {
 		echo "登録に失敗しました。";
 		echo $e;
+		echo $_POST["name"];
 		print '<a href="./index.html">'."トップページに戻る".'</a>';
 		exit;
 	}
