@@ -11,7 +11,7 @@
   <!--ページ説明文-->
   <meta name="description" content="">
   <!--スマホ対応-->
-  <met a name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--ファビコン-->
   <link rel="shortcut icon" href="">
   <!--テストページなどでインデックスとリンクの巡回をさせたくない時に使用 -->
@@ -39,7 +39,7 @@
           <div class="form-title">ログイン</div>
           <form method="post" action="????">
             <div class="form-item">メールアドレス</div>
-            <input type="text" name="mailaddress">
+            <input type="text" name="mail_address">
             <div class="form-item">パスワード</div>
             <input type="password" name="password">
             <p>

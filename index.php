@@ -39,10 +39,13 @@
     <!-- jquery読み込む -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- google map api -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATwxT2KS_POdUo0O06ub1EPhmO5OoorzI&libraries=places"
-    ></script>
-    <!-- js -->
-    <script src="index3-3.js" async></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATwxT2KS_POdUo0O06ub1EPhmO5OoorzI&libraries=places"></script>
+
+    <?php if ($_SESSION["LOGGED_IN"] != true) : ?>
+	    <script src="map_guest.js" async></script>
+    <?php else: ?>
+        <script src="map_user.js" async></script>
+    <?php endif; ?>
 </div>
 
 <div class="footer">
