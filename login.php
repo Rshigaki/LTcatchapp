@@ -24,7 +24,7 @@
 </header>
     <body>
       <div class="header">
-        <div class="header-left">LT catch app</div>
+          <div class="header-logo"><a href="index.php">LTcatchapp</a></div>
         <div class="header-right">
           <ul>
             <li class="selected">ログイン</li>

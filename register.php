@@ -23,7 +23,7 @@
 <body>
 
 <div class="header">
-    <div class="header-logo">LTcatchapp</div>
+    <div class="header-logo"><a href="index.php">LTcatchapp</a></div>
     <div class="header-list">
         <ul>
           <?php if ($_SESSION["LOGGED_IN"] != true) : ?>
