@@ -36,13 +36,13 @@
       <div class="form-title">入力内容</div>
 
       <div class="form-item">■ 名前</div>
-      <?php echo $_POST['name']; ?>
+      <?php echo $_SESSION['NAME']; ?>
 
       <div class="form-item">■ パスワード</div>
-      <?php echo $_POST['password']; ?>
+      <?php echo $_SESSION['PASSWORD']; ?>
 
       <div class="form-item">最寄り駅</div>
-      <?php echo $_POST['home_station']; ?>
+      <?php echo $_SESSION['HOME_STATION']; ?>
 
     </div>
   </div>
