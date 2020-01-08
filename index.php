@@ -44,7 +44,7 @@
         <script src="map_user.js" async></script>
     <?php endif; ?>
     <!-- google map api -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATwxT2KS_POdUo0O06ub1EPhmO5OoorzI&libraries=places"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATwxT2KS_POdUo0O06ub1EPhmO5OoorzI&libraries=places&callback=initMap"></script>
 </div>
 
 <div class="footer">
