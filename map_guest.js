@@ -4,7 +4,7 @@ let success = (pos) => {
     let currentPosition = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
     map = new google.maps.Map(document.getElementById('map'), {
         center: currentPosition,
-        zoom: 13
+        zoom: 15
     });
 };
 
