@@ -24,7 +24,7 @@ let options = {
 function nearbysearch() {
     var request = {
         location: currentPosition,
-        radius: '1500',
+        radius: '15000',
         type: ['train_station']
     };
 
