@@ -1,5 +1,6 @@
 let map;
 let currentPosition;
+let markers = [];
 
 let success = (pos) => {
     currentPosition = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
@@ -21,24 +22,29 @@ let options = {
     maximumAge: 0
 };
 
+function createMarker(latlng, count) {
+    markers.push(new google.maps.Marker({
+        position: latlng,
+        map: map,
+        information: "test!!"
+    }));
+}
+
 function nearbysearch() {
-    var request = {
+    let request = {
         location: currentPosition,
         radius: '5000',
         type: ['train_station']
     };
 
-    service = new google.maps.places.PlacesService(map);
+    let service = new google.maps.places.PlacesService(map);
     service.nearbySearch(request, callback);
 
     function callback(results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
-            //取得したカフェ情報をそれぞれcreateMarkerに入れて、マーカーを作成
-            for (var i = 0; i < results.length; i++) {
-                var place = results[i];
-                //console.log(place)
-                var latlng = place.geometry.location;
-                var icn = place.icon;
+            for (let i = 0; i < results.length; i++) {
+                let place = results[i];
+                let latlng = place.geometry.location;
 
                 let rendererOptions = {
                     map: map, // 描画先の地図
@@ -61,11 +67,9 @@ function nearbysearch() {
                             center: currentPosition,
                             suppressMarkers: true // デフォルトのマーカーを削除
                         });
-                        let leg = response.routes[0].legs[0];
-                        makeMarker(leg.end_location, markers.goalMarker, map);
                     }
                 });
-                createMarker(latlng, icn, place);
+                createMarker(latlng, i);
             }
         }
     }
