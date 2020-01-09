@@ -1,8 +1,9 @@
 let map;
 
 let success = (pos) => {
+    let currentPosition = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
     map = new google.maps.Map(document.getElementById('map'), {
-        center: pos,
+        center: currentPosition,
         zoom: 8
     });
 };
