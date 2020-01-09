@@ -7,7 +7,7 @@ let success = (pos) => {
     currentPosition = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
     map = new google.maps.Map(document.getElementById('map'), {
         center: currentPosition,
-        zoom: 14
+        zoom: 12
     });
     new google.maps.Circle({
         center: currentPosition,       // 中心点(google.maps.LatLng)
