@@ -1,6 +1,7 @@
 let map;
 let currentPosition;
 let markers = [];
+let infoWindow = [];
 
 let success = (pos) => {
     currentPosition = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
@@ -28,6 +29,10 @@ function createMarker(latlng, count) {
         map: map,
         information: "test!!"
     }));
+    infoWindow.push(new google.maps.InfoWindow({
+        content: count+'test!!'
+    }));
+    infoWindow[count].open(map, markers[count]);
 }
 
 function nearbysearch() {
