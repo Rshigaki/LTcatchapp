@@ -5,7 +5,7 @@ let success = (pos) => {
     currentPosition = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
     map = new google.maps.Map(document.getElementById('map'), {
         center: currentPosition,
-        zoom: 15
+        zoom: 14
     });
     nearbysearch(currentPosition);
 };
@@ -24,7 +24,7 @@ let options = {
 function nearbysearch() {
     var request = {
         location: currentPosition,
-        radius: '15000',
+        radius: '5000',
         type: ['train_station']
     };
 
