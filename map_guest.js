@@ -65,7 +65,7 @@ function createMarker(latlng, count) {
 function nearbysearch() {
     let request = {
         location: currentPosition,
-        radius: '5000',
+        radius: '1500',
         type: ['train_station']
     };
 
