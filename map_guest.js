@@ -11,14 +11,31 @@ let success = (pos) => {
     });
     new google.maps.Circle({
         center: currentPosition,       // 中心点(google.maps.LatLng)
-        fillColor: '#ff0000',   // 塗りつぶし色
-        fillOpacity: 0.5,       // 塗りつぶし透過度（0: 透明 ⇔ 1:不透明）
+        fillOpacity: 0.1,       // 塗りつぶし透過度（0: 透明 ⇔ 1:不透明）
         map: map,             // 表示させる地図（google.maps.Map）
-        radius: 95330,          // 半径（ｍ）
+        radius: 500,          // 半径（ｍ）
         strokeColor: '#ff0000', // 外周色
         strokeOpacity: 1,       // 外周透過度（0: 透明 ⇔ 1:不透明）
         strokeWeight: 1         // 外周太さ（ピクセル）
     });
+    new google.maps.Circle({
+        center: currentPosition,       // 中心点(google.maps.LatLng)
+        map: map,             // 表示させる地図（google.maps.Map）
+        radius: 1000,          // 半径（ｍ）
+        strokeColor: '#ff0000', // 外周色
+        strokeOpacity: 1,       // 外周透過度（0: 透明 ⇔ 1:不透明）
+        strokeWeight: 1         // 外周太さ（ピクセル）
+    });
+    new google.maps.Circle({
+        center: currentPosition,       // 中心点(google.maps.LatLng)
+        map: map,             // 表示させる地図（google.maps.Map）
+        radius: 1500,          // 半径（ｍ）
+        strokeColor: '#ff0000', // 外周色
+        strokeOpacity: 1,       // 外周透過度（0: 透明 ⇔ 1:不透明）
+        strokeWeight: 1         // 外周太さ（ピクセル）
+    });
+
+
     nearbysearch(currentPosition);
 };
 
