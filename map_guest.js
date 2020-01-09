@@ -1,12 +1,21 @@
 let map;
 
-$(document).ready(function() {
-    initMap();
-});
-
-function initMap() {
+let success = (pos) => {
     map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: -34.397, lng: 150.644},
+        center: pos,
         zoom: 8
     });
-}
+};
+
+let error = (err) => {
+    msg = 'エラーが発生しました: ' + err;
+    console.log(msg);
+};
+
+let options = {
+    enableHighAccuracy: false,
+    timeout: 5000,
+    maximumAge: 0
+};
+
+navigator.geolocation.getCurrentPosition(success, error, options);
