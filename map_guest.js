@@ -54,9 +54,10 @@ function createMarker(latlng, i, costTime) {
         position: latlng,
         map: map,
     }));
-    let time = ['23:','00:','01:'];
-    let last_time = time[Math.floor(Math.random()*3)] + Math.floor(Math.random()*60);
-    if(last_time <= 9) { last_time = ( '00' + last_time ).slice( -2 ); }
+    let hour = ['23:','00:','01:'][Math.floor(Math.random()*3)];
+    let min = Math.floor(Math.random()*60);
+    if(min <= 9) { min = ( '00' + min ).slice( -2 ); }
+    let last_time = hour + min;
     infoWindow.push(new google.maps.InfoWindow({
         content: '<b>' + last_time + '</b>'
     }));
@@ -103,8 +104,8 @@ function nearbysearch() {
                             suppressMarkers: true // デフォルトのマーカーを削除
                         });
                     }
-                    createMarker(latlng, i);
                 });
+                createMarker(latlng, i);
             }
         }
     }
