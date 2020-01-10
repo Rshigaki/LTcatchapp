@@ -57,11 +57,9 @@ function createMarker(latlng, i, costTime) {
     let time = ['23:','00:','01:'];
     let last_time = time[Math.floor(Math.random()*3)] + Math.floor(Math.random()*60);
     infoWindow.push(new google.maps.InfoWindow({
-        content: '<b>' + last_time + '</b><br /> 所要時間: ' + costTime
+        content: '<b>' + last_time + '</b><br /> 所要時間: '
     }));
-    markers[i].addListener('click', function() { // マーカーをクリックしたとき
-        infoWindow[i].open(map, markers[i]); // 吹き出しの表示
-    });
+    openWindow(i);
 }
 
 function openWindow(i){
