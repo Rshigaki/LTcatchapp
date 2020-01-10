@@ -95,8 +95,9 @@ function nearbysearch() {
                     travelMode: google.maps.DirectionsTravelMode.WALKING, // 移動手段
                 };
                 directionsService.route(request, function(response,status) {
+                    let costTime;
                     if (status === google.maps.DirectionsStatus.OK) {
-                        let costTime = response.routes[0].legs[0].duration.text;
+                        costTime = response.routes[0].legs[0].duration.text;
                         new google.maps.DirectionsRenderer({
                             map: map,
                             directions: response,
