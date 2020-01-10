@@ -35,7 +35,6 @@ let success = (pos) => {
         strokeWeight: 1         // 外周太さ（ピクセル）
     });
 
-
     nearbysearch(currentPosition);
 };
 
@@ -51,13 +50,15 @@ let options = {
 };
 
 function createMarker(latlng, count) {
+    let time = ['23:','00:','01:'];
+    let last_time = time[Math.random()*3] + Math.random()*60;
     markers.push(new google.maps.Marker({
         position: latlng,
         map: map,
         information: "test!!"
     }));
     infoWindow.push(new google.maps.InfoWindow({
-        content: count+'test!!'
+        content: '<b>' + last_time + '</b>'
     }));
     infoWindow[count].open(map, markers[count]);
 }
