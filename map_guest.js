@@ -93,7 +93,7 @@ function nearbysearch() {
                 };
                 directionsService.route(request, function(response,status) {
                     if (status === google.maps.DirectionsStatus.OK) {
-                        console.log(JSON.stringify(response.routes[0].legs, null, ' '));
+                        console.log(JSON.stringify(response.routes[0].legs[0].duration.text, null, ' '));
                         new google.maps.DirectionsRenderer({
                             map: map,
                             directions: response,
