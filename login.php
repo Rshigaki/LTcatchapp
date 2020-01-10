@@ -1,39 +1,35 @@
 <!DOCTYPE html>
-
-<html lang="ja">
+<?php
+session_start();
+?>
+<html>
 <head>
-    <!--文字コード-->
-  <meta charset="utf-8">
-  <!--IEでは最新バージョンのレンダリングモード（edge）を使用-->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!--ページタイトル-->
-  <title>ログイン</title>
-  <!--ページ説明文-->
-  <meta name="description" content="">
-  <!--スマホ対応-->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--ファビコン-->
-  <link rel="shortcut icon" href="">
-  <!--テストページなどでインデックスとリンクの巡回をさせたくない時に使用 -->
-  <!--<meta name="robots" content="noindex, nofollow">-->
-  <link rel="stylesheet" href="stylesheet.css">
+    <meta charset="utf-8">
+    <!--IEでは最新バージョンのレンダリングモード（edge）を使用-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>LTcatch</title>
+    <!--スマホ対応-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--外部CSS-->
+    <link rel="stylesheet" href="stylesheet.css">
 </head>
 
-<header>
-  <h1>LT catch app</h1>
-</header>
-    <body>
-      <div class="header">
-          <div class="header-logo"><a href="index.php">LTcatchapp</a></div>
-        <div class="header-right">
-          <ul>
-            <li class="selected">ログイン</li>
-            <li>設定</li>
-            <li>新規登録</li>
-          </ul>
-        </div>
-      </div>
-
+<body>
+<div class="header">
+    <div class="header-logo"><a href="index.php">LTcatchapp</a></div>
+    <div class="header-list">
+        <ul>
+					<?php if ($_SESSION["LOGGED_IN"] != true) : ?>
+              <li><a href="./register.php">会員登録</a></li>
+              <li><a href="./login.php">ログイン</a></li>
+              <li>ゲスト様</li>
+					<?php else : ?>
+              <li><a href="./logout.php">ログアウト</a></li>
+              <li><?php echo($_SESSION["NAME"] . "様") ?></li>
+					<?php endif; ?>
+        </ul>
+    </div>
+</div>
       <div class="main">
         <div class="contact-form">
           <div class="form-title">ログイン</div>
