@@ -22,6 +22,7 @@
 					$_SESSION["LOGGED_IN"] = true;
 					header("location: ./index.php");
 				}
+				header("./login.php");
 	} catch (PDOException $e) {
 		echo "登録に失敗しました(´・ω・｀)";
 		echo $e;

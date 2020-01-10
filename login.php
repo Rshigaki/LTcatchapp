@@ -45,16 +45,5 @@ session_start();
         </div>
       </div>
 
-      <div class="footer">
-        <div class="footer-left">
-          <ul>
-            <li>会社概要</li>
-            <li>採用</li>
-            <li>お問い合わせ</li>
-          </ul>
-        </div>
-      </div>
     </body>
-  <!-- 外部javascript -->
-  <script type="text/javascript" src=""></script>
 </html>
