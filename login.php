@@ -33,9 +33,9 @@ session_start();
       <div class="main">
         <div class="contact-form">
           <div class="form-title">ログイン</div>
-          <form method="post" action="login_session.php">
-            <div class="form-item">メールアドレス</div>
-            <input type="text" name="mail_address">
+          <form method="post" action="./login_session.php">
+            <div class="form-item">名前</div>
+            <input type="text" name="name">
             <div class="form-item">パスワード</div>
             <input type="password" name="password">
             <p>
