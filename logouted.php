@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-    session_start();
+session_start();
 ?>
 <html>
 <head>
@@ -13,38 +13,26 @@
     <!--外部CSS-->
     <link rel="stylesheet" href="stylesheet.css">
 </head>
+
 <body>
-  <div class="header">
-      <div class="header-logo"><a href="index.php">LTcatchapp</a></div>
+<div class="header">
+    <div class="header-logo"><a href="index.php">LTcatchapp</a></div>
     <div class="header-list">
         <ul>
-          <?php if ($_SESSION["LOGGED_IN"] != true) : ?>
+					<?php if ($_SESSION["LOGGED_IN"] != true) : ?>
               <li><a href="./register.php">会員登録</a></li>
               <li><a href="./login.php">ログイン</a></li>
               <li>ゲスト様</li>
-          <?php else : ?>
+					<?php else : ?>
               <li><a href="./logout.php">ログアウト</a></li>
               <li><?php echo($_SESSION["NAME"] . "様") ?></li>
-          <?php endif; ?>
+					<?php endif; ?>
         </ul>
     </div>
-  </div>
-
-  <div class="main">
-    <div class="thanks-message">会員登録ありがとうございます。</div>
-    <div class="display-contact">
-      <div class="form-title">入力内容</div>
-
-      <div class="form-item">名前</div>
-      <?php echo $_SESSION['NAME']; ?>
-
-      <div class="form-item">パスワード</div>
-      <?php echo $_SESSION['PASSWORD']; ?>
-
-      <div class="form-item">自宅からの最寄り駅</div>
-      <?php echo $_SESSION['HOME_STATION']; ?>
-
-    </div>
-  </div>
+</div>
+<p>
+    ログアウトしました。
+</p> <br />
+<a href="./index.php"> トップページに戻る </a>
 </body>
 </html>

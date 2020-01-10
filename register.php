@@ -46,7 +46,7 @@
             <input type="text" name="name">
             <div class="form-item">パスワード</div>
             <input type="text" name="password">
-            <div class="form-item">最寄り駅</div>
+            <div class="form-item">自宅からの最寄り駅</div>
             <input type="text" name="home-station">
             <p>
                 <input type="submit" value="登録">
