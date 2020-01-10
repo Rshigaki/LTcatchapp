@@ -77,6 +77,11 @@ textarea {
     line-height: 1.428571429;
     color: #555;
 }
+
+body {
+    background-color: #5cb85c;
+}
+
 .thanks-message {
     margin-top: 50px;
     text-align: center;
