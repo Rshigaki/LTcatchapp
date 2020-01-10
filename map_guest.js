@@ -50,13 +50,13 @@ let options = {
 };
 
 function createMarker(latlng, count) {
-    let time = ['23:','00:','01:'];
-    let last_time = time[Math.floor(Math.random()*3)] + Math.floor(Math.random()*60);
     markers.push(new google.maps.Marker({
         position: latlng,
         map: map,
         information: "test!!"
     }));
+    let time = ['23:','00:','01:'];
+    let last_time = time[Math.floor(Math.random()*3)] + Math.floor(Math.random()*60);
     infoWindow.push(new google.maps.InfoWindow({
         content: '<b>' + last_time + '</b>'
     }));
@@ -77,6 +77,7 @@ function nearbysearch() {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
             for (let i = 0; i < results.length; i++) {
                 let place = results[i];
+                console.log(JSON.stringify(place));
                 let latlng = place.geometry.location;
 
                 let rendererOptions = {
