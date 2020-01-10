@@ -11,7 +11,7 @@
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
             ]
         );
-				$stmt = $pdo->prepare('select name from users where ? = name and ? = password');
+				$stmt = $pdo->prepare('select * from users where name = ? and password = ?');
 				$stmt->bindValue(1, $_POST["name"]);
 				$stmt->bindValue(2, $_POST["password"]);
 				$stmt->execute();
