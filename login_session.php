@@ -16,7 +16,11 @@
 				$stmt->bindValue(2, $_POST["password"]);
 				$stmt->execute();
 				foreach($stmt as $row){
-					var_dump($row);
+					if($row){
+						echo "成功！";
+					}else{
+						echo "失敗！";
+					}
 				}
 				if(false) {
 					$_SESSION["NAME"] = $_POST["name"];
