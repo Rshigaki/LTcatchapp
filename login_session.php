@@ -15,7 +15,7 @@
 				$stmt->bindValue(1, $_POST["name"]);
 				$stmt->bindValue(2, $_POST["password"]);
 				$stmt->execute();
-				var_dump($stmt);
+				var_dump($stmt->fetch);
 				if(false) {
 					$_SESSION["NAME"] = $_POST["name"];
 					$_SESSION["HOME_STATION"] = $_POST["home-station"];
