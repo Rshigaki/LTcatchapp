@@ -56,8 +56,9 @@ function createMarker(latlng, i, costTime) {
     }));
     let time = ['23:','00:','01:'];
     let last_time = time[Math.floor(Math.random()*3)] + Math.floor(Math.random()*60);
+    if(last_time <= 9) { last_time = ( '00' + last_time ).slice( -2 ); }
     infoWindow.push(new google.maps.InfoWindow({
-        content: '<b>' + last_time + '</b><br /> 所要時間: costTime'
+        content: '<b>' + last_time + '</b>'
     }));
     openWindow(i);
 }
@@ -95,16 +96,14 @@ function nearbysearch() {
                     travelMode: google.maps.DirectionsTravelMode.WALKING, // 移動手段
                 };
                 directionsService.route(request, function(response,status) {
-                    let costTime;
                     if (status === google.maps.DirectionsStatus.OK) {
-                        costTime = response.routes[0].legs[0].duration.text;
                         new google.maps.DirectionsRenderer({
                             map: map,
                             directions: response,
                             suppressMarkers: true // デフォルトのマーカーを削除
                         });
                     }
-                    createMarker(latlng, i, costTime);
+                    createMarker(latlng, i);
                 });
             }
         }
