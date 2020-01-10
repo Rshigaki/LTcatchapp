@@ -54,18 +54,6 @@ function createMarker(latlng, i, costTime) {
         position: latlng,
         map: map,
     }));
-    let hour = ['23:','00:','01:'][Math.floor(Math.random()*3)];
-    let min = Math.floor(Math.random()*60);
-    if(min <= 9) { min = ( '00' + min ).slice( -2 ); }
-    let last_time = hour + min;
-    infoWindow.push(new google.maps.InfoWindow({
-        content: '<b>' + last_time + '</b>'
-    }));
-    openWindow(i);
-}
-
-function openWindow(i){
-    infoWindow[i].open(map, markers[i]);
 }
 
 function nearbysearch() {
