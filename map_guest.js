@@ -82,7 +82,6 @@ function nearbysearch() {
                 let rendererOptions = {
                     map: map, // 描画先の地図
                     draggable: true, // ドラッグ可
-                    preserveViewport: false // centerの座標、ズームレベルで表示
                 };
                 let directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
                 let directionsService = new google.maps.DirectionsService();
