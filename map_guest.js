@@ -97,7 +97,6 @@ function nearbysearch() {
                         new google.maps.DirectionsRenderer({
                             map: map,
                             directions: response,
-                            center: currentPosition,
                             suppressMarkers: true // デフォルトのマーカーを削除
                         });
                     }
