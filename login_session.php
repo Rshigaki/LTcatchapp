@@ -16,17 +16,11 @@
 				$stmt->bindValue(2, $_POST["password"]);
 				$stmt->execute();
 				foreach($stmt as $row){
-					if($row){
-						echo "成功！";
-					}else{
-						echo "失敗！";
-					}
-				}
-				if(false) {
 					$_SESSION["NAME"] = $_POST["name"];
 					$_SESSION["HOME_STATION"] = $_POST["home-station"];
 					$_SESSION["PASSWORD"] = $_POST["password"];
 					$_SESSION["LOGGED_IN"] = true;
+					header("location: ./index.php");
 				}
 	} catch (PDOException $e) {
 		echo "登録に失敗しました(´・ω・｀)";
