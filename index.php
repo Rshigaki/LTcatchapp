@@ -16,7 +16,7 @@
 
 <body>
 <div class="header">
-    <div class="header-logo"><a href="index.php"></a></div>
+    <div class="header-logo"><a href="index.php">終電キャッチャー</a></div>
     <div class="header-list">
         <ul>
           <?php if ($_SESSION["LOGGED_IN"] != true) : ?>
