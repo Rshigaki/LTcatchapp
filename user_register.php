@@ -16,6 +16,7 @@
 				$stmt->bindValue(2, $_POST["password"]);
 				$stmt->bindValue(3, $_POST["home-station"]);
 				$stmt->execute();
+				var_dump($stmt);
 	} catch (PDOException $e) {
 		echo "登録に失敗しました(´・ω・｀)";
 		echo $e;
@@ -26,4 +27,4 @@
 	$_SESSION["HOME_STATION"] = $_POST["home-station"];
 	$_SESSION["PASSWORD"] = $_POST["password"];
 	$_SESSION["LOGGED_IN"] = true;
-	header("location: ./sent.php");
+	//header("location: ./sent.php");
