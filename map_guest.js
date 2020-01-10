@@ -49,7 +49,7 @@ let options = {
     maximumAge: 0
 };
 
-function createMarker(latlng, count, costTime) {
+function createMarker(latlng, count, costTime, callback) {
     markers.push(new google.maps.Marker({
         position: latlng,
         map: map,
@@ -59,6 +59,11 @@ function createMarker(latlng, count, costTime) {
     infoWindow.push(new google.maps.InfoWindow({
         content: '<b>' + last_time + '</b><br /> 所要時間: ' + costTime
     }));
+    callback(count);
+}
+
+function openWindow(i){
+    infoWindow[i].open(map, markers[i]);
 }
 
 function nearbysearch() {
@@ -97,8 +102,7 @@ function nearbysearch() {
                             directions: response,
                             suppressMarkers: true // デフォルトのマーカーを削除
                         });
-                        createMarker(latlng, i, response.routes[0].legs[0].duration.text);
-                        infoWindow[i].open(map, markers[i]);
+                        createMarker(latlng, i, response.routes[0].legs[0].duration.text, openWindow);
                     }
                 });
             }
