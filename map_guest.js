@@ -51,7 +51,7 @@ let options = {
 
 function createMarker(latlng, count) {
     let time = ['23:','00:','01:'];
-    let last_time = time[Math.random()*3] + Math.random()*60;
+    let last_time = time[Math.floor(Math.random()*3)] + Math.floor(Math.random()*60);
     markers.push(new google.maps.Marker({
         position: latlng,
         map: map,
