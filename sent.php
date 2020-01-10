@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <!--IEでは最新バージョンのレンダリングモード（edge）を使用-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>LTcatch</title>
+    <title>終電キャッチャー</title>
     <!--スマホ対応-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--外部CSS-->
@@ -15,7 +15,7 @@
 </head>
 <body>
   <div class="header">
-      <div class="header-logo"><a href="index.php">LTcatchapp</a></div>
+      <div class="header-logo"><a href="index.php">終電キャッチャー</a></div>
     <div class="header-list">
         <ul>
           <?php if ($_SESSION["LOGGED_IN"] != true) : ?>
