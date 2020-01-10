@@ -49,7 +49,7 @@ let options = {
     maximumAge: 0
 };
 
-function createMarker(latlng, count, costTime) {
+function createMarker(latlng, i, costTime) {
     markers.push(new google.maps.Marker({
         position: latlng,
         map: map,
@@ -59,6 +59,9 @@ function createMarker(latlng, count, costTime) {
     infoWindow.push(new google.maps.InfoWindow({
         content: '<b>' + last_time + '</b><br /> 所要時間: ' + costTime
     }));
+    markers[i].addListener('click', function() { // マーカーをクリックしたとき
+        infoWindow[i].open(map, markers[i]); // 吹き出しの表示
+    });
 }
 
 function openWindow(i){
