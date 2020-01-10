@@ -77,7 +77,6 @@ function nearbysearch() {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
             for (let i = 0; i < results.length; i++) {
                 let place = results[i];
-                console.log(JSON.stringify(place));
                 let latlng = place.geometry.location;
 
                 let rendererOptions = {
@@ -94,6 +93,7 @@ function nearbysearch() {
                 };
                 directionsService.route(request, function(response,status) {
                     if (status === google.maps.DirectionsStatus.OK) {
+                        console.log(JSON.stringify(response));
                         new google.maps.DirectionsRenderer({
                             map: map,
                             directions: response,
