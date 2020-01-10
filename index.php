@@ -33,8 +33,8 @@
 
 <div class="main">
     <div id="description">
-        現在地から1.5km圏内の各駅への徒歩でのルートを表示します。 <br />
-        会員の方は、それに加え、各駅から自宅の最寄り駅までの電車の最終時刻を知ることができます。 <br />
+現在地から1.5km圏内の各駅への徒歩でのルートを表示します。 <br />
+会員の方は、それに加え、各駅から自宅の最寄り駅までの電車の最終時刻を知ることができます。 <br />
     </div>
     <div id="map" style="height: 600px; width: 50%; margin: 2rem auto 0;"></div>
     <button id="getcurrentlocation">リロード</button>
